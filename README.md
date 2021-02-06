@@ -1,4 +1,12 @@
-## Welcome to GitHub Pages
+<p align="center">
+  <a href="https://www.linkedin.com/company/open-template-hub">
+    <img src="https://avatars2.githubusercontent.com/u/65504426?s=200&v=4" alt="Logo">
+  </a>
+</p>
+
+<h1 align="center">
+Open Template Hub - gitHub Pages
+</h1>
 
 You can use the [editor on GitHub](https://github.com/open-template-hub/open-template-hub.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
