@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
-Open Template Hub - gitHub Pages
+Open Template Hub - GitHub Pages
 </h1>
 
 You can use the [editor on GitHub](https://github.com/open-template-hub/open-template-hub.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
