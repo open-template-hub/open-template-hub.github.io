@@ -1,1647 +1,204 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="/">
-    <title>WeContribute - Dev</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-
-    <link rel="apple-touch-icon" href="assets/staging/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" href="assets/staging/favicons/favicon.png">
-    <link rel="manifest" href="assets/staging/favicons/site.webmanifest">
-    <link rel="mask-icon" href="assets/staging/favicons/safari-pinned-tab.svg" color="#DFC36C">
-
-    <meta name="msapplication-config" content="assets/staging/favicons/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#e0c87d">
-
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body, html {
-            overflow: auto;
-        }
-
-        .index-splash-page {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: var(--background-color);
-            display: flex;
-            align-items: center;
-            text-align: center;
-            flex-direction: column;
-        }
-
-        .index-splash-animation {
-            margin-top: 30vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-        }
-
-        .index-splash-animation img {
-            height: 55px;
-        }
-
-        .index-splash-animation h2 {
-            color: var(--color);
-            margin-top: 20px;
-        }
-
-        .index-splash-animation h3 {
-            color: #C39D2A;
-        }
-
-        .index-splash-bar {
-            width: 130px;
-            height: 2px;
-            background: #cfcfcf;
-            margin-top: 22px;
-            margin-bottom: 50px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .index-splash-bar::before {
-            content: "";
-            width: 68px;
-            height: 2px;
-            background: #DFC36C;
-            position: absolute;
-            left: -34px;
-            animation: index-splash-bar 1.5s infinite ease;
-        }
-
-        @keyframes index-splash-bar {
-            50% {
-                left: 96px;
-                background: #C39D2A;
-            }
-        }
-
-        @media only screen and (max-width: 799px) {
-            .index-splash-animation {
-                max-width: 90%;
-            }
-        }
-
-        @media only screen and (min-width: 800px) {
-            .index-splash-animation {
-                max-width: 50%;
-            }
-        }
-    </style>
-    <style>@charset "UTF-8";
-    :root {
-        --lighter: #797979;
-        --color: #545454;
-        --darker: #2b2b2b;
-        --darker-contrast: #efefef;
-        --contrast: #e0e0e0;
-        --lighter-contrast: #cfcfcf;
-        --always-contrast: #e0e0e0;
-        --success: #228b22;
-        --error: #E23237;
-        --warn: #d28f29;
-        --background-color: white;
-        --brand-background-text: #e0e0e0;
-        --dark-nav: #545454;
-        --card: #fefffe;
-        --shadow: rgba(155, 155, 155, 0.5);
-        --cropper-overlay-color: var(--card);
-        --cropper-outline-color: rgba(254, 255, 254, 0.7);
-    }
-
-    .dark-theme {
-        --lighter: #cfcfcf;
-        --color: #e0e0e0;
-        --darker: #efefef;
-        --darker-contrast: #2b2b2b;
-        --contrast: #545454;
-        --lighter-contrast: #797979;
-        --success: #398039;
-        --error: #e04e52;
-        --warn: #cda05c;
-        --background-color: #353535;
-        --brand-background: #162416;
-        --dark-nav: #353735;
-        --card: #353735;
-        --shadow: rgba(119, 119, 119, 0.5);
-        --cropper-overlay-color: var(--card);
-        --cropper-outline-color: rgba(53, 55, 53, 0.5);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --lighter: #cfcfcf;
-            --color: #e0e0e0;
-            --darker: #efefef;
-            --darker-contrast: #2b2b2b;
-            --contrast: #545454;
-            --lighter-contrast: #797979;
-            --success: #398039;
-            --error: #e04e52;
-            --warn: #cda05c;
-            --background-color: #353535;
-            --brand-background: #162416;
-            --dark-nav: #353735;
-            --card: #353735;
-            --shadow: rgba(119, 119, 119, 0.5);
-            --cropper-overlay-color: var(--card);
-            --cropper-outline-color: rgba(53, 55, 53, 0.5);
-        }
-
-        .dark-theme {
-            --lighter: #797979;
-            --color: #545454;
-            --darker: #2b2b2b;
-            --darker-contrast: #efefef;
-            --contrast: #e0e0e0;
-            --lighter-contrast: #cfcfcf;
-            --success: #228b22;
-            --error: #E23237;
-            --warn: #d28f29;
-            --background-color: white;
-            --brand-background-text: #e0e0e0;
-            --dark-nav: #545454;
-            --card: #fefffe;
-            --shadow: rgba(155, 155, 155, 0.5);
-            --cropper-overlay-color: var(--card);
-            --cropper-outline-color: rgba(254, 255, 254, 0.7);
-        }
-    }
-
-    .section, .section-submit {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1.5rem;
-    }
-
-    textarea, textarea::-webkit-input-placeholder, input, input::-webkit-input-placeholder {
-        font-size: 16px;
-        font-weight: 300;
-    }
-
-    textarea, input {
-        color: var(--color);
-        background: transparent;
-    }
-
-    textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {
-        color: var(--contrast);
-    }
-
-    textarea, input {
-        border: 0;
-        width: 100%;
-        border-bottom: 1px solid var(--contrast);
-        border-radius: 0;
-        outline: none;
-        padding: 8px;
-        box-sizing: border-box;
-        transition: border-bottom-color 400ms ease-out;
-    }
-
-    textarea:focus, input:focus {
-        border-color: var(--color);
-        border-bottom-width: 2px;
-    }
-
-    input[type=checkbox] {
-        display: none;
-    }
-
-    input[type=checkbox] + label {
-        display: block;
-        cursor: pointer;
-        width: -webkit-fit-content;
-        width: -moz-fit-content;
-        width: fit-content;
-    }
-
-    input[type=checkbox] + label:before {
-        content: "✔";
-        border-radius: 3px;
-        border: 2px solid var(--contrast);
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        padding-left: 0.2em;
-        padding-bottom: 0.2em;
-        margin-right: 0.2em;
-        vertical-align: center;
-        color: transparent;
-        transition: 200ms;
-    }
-
-    input[type=checkbox]:checked + label:before {
-        color: var(--contrast);
-        background-color: var(--color);
-        border-color: var(--color);
-    }
-
-    .input-with-icon, .input-checkbox {
-        width: 100%;
-        position: relative;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .input-with-icon {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row-reverse;
-        align-items: center;
-    }
-
-    .input-with-icon textarea:focus + i, .input-with-icon input:focus + i {
-        color: var(--color);
-    }
-
-    .input-with-icon i {
-        padding: 11px 8px;
-        color: var(--contrast);
-        border-radius: 3px 0 0 3px;
-        transition: 200ms;
-    }
-
-    .input-checkbox-label {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-        align-items: center;
-        position: relative;
-        cursor: pointer;
-        padding: 7px;
-    }
-
-    .input-checkbox-label span {
-        height: 24px;
-        width: 24px;
-        box-sizing: border-box;
-        border-radius: 3px;
-        border: 1px solid var(--contrast);
-        margin-left: 1px;
-        transition: 200ms;
-    }
-
-    .input-checkbox-label p {
-        font-size: 16px;
-        font-weight: 300;
-        margin-left: 17px;
-    }
-
-    .input-checkbox-label input:checked ~ span {
-        border-color: var(--color);
-        background-color: var(--color);
-    }
-
-    .input-checkbox-label span:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-
-    .input-checkbox-label input:checked ~ span:after {
-        display: block;
-    }
-
-    .input-checkbox-label span:after {
-        left: 16px;
-        top: 11px;
-        width: 6px;
-        height: 11px;
-        border: solid var(--contrast);
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-    }
-
-    @media (hover: hover) {
-        form a:hover {
-            background: none;
-        }
-    }
-
-    .alert-with-icon {
-        width: 100%;
-        position: relative;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .alert-with-icon p {
-        padding-left: 49px;
-    }
-
-    .alert-with-icon i {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 2px 7px;
-    }
-
-    .success-text, .success-text p, .success-text i {
-        color: var(--success);
-    }
-
-    .input-success input {
-        border-color: var(--success);
-    }
-
-    .input-success input::-webkit-input-placeholder {
-        color: var(--success);
-    }
-
-    .input-success input:focus {
-        border-color: var(--success);
-    }
-
-    .input-success.input-with-icon input:focus + i {
-        color: var(--success);
-    }
-
-    .input-success.input-with-icon i {
-        color: var(--success);
-    }
-
-    .error-text, .error-text p, .error-text h1, .error-text h2, .error-text h3, .error-text h4, .error-text h5, .error-text h6, .error-text i {
-        color: var(--error);
-    }
-
-    .input-error input {
-        border-color: var(--error);
-    }
-
-    .input-error input::-webkit-input-placeholder {
-        color: var(--error);
-    }
-
-    .input-error input:focus {
-        border-color: var(--error);
-    }
-
-    .input-error.input-with-icon input:focus + i {
-        color: var(--error);
-    }
-
-    .input-error.input-with-icon i {
-        color: var(--error);
-    }
-
-    .warn-text, .warn-text p, .warn-text i {
-        color: var(--warn);
-    }
-
-    .input-warn input {
-        border-color: var(--warn);
-    }
-
-    .input-warn input::-webkit-input-placeholder {
-        color: var(--warn);
-    }
-
-    .input-warn input:focus {
-        border-color: var(--warn);
-    }
-
-    .input-warn.input-with-icon input:focus + i {
-        color: var(--warn);
-    }
-
-    .input-warn.input-with-icon i {
-        color: var(--warn);
-    }
-
-    .card-bottom-loading {
-        width: 100%;
-        height: 5px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .card-bottom-loading-wrapper {
-        width: 100%;
-        height: 5px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .bottom-nav-loading {
-        width: 100%;
-        height: 5px;
-        position: fixed;
-        bottom: calc(50px + env(safe-area-inset-bottom));
-        left: 0;
-        overflow: hidden;
-        z-index: 11;
-    }
-
-    .card-bottom-loading::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: calc(-25%);
-        width: 50%;
-        height: 5px;
-        border-radius: 3px;
-        background-color: var(--color);
-        -webkit-animation: loading-bar 1.5s infinite ease-in-out;
-        animation: loading-bar 1.5s infinite ease-in-out;
-    }
-
-    .bottom-nav-loading::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        z-index: 1000;
-        left: calc(-25%);
-        width: 50%;
-        height: 5px;
-        border-radius: 3px;
-        background-color: var(--color);
-        -webkit-animation: loading-bar 1.5s infinite ease-in-out;
-        animation: loading-bar 1.5s infinite ease-in-out;
-    }
-
-    @-webkit-keyframes loading-bar {
-        50% {
-            left: 75%;
-            background: var(--lighter);
-        }
-    }
-
-    @keyframes loading-bar {
-        50% {
-            left: 75%;
-            background: var(--lighter);
-        }
-    }
-
-    @media only screen and (max-width: 799px) {
-        .card-bottom-loading::after {
-            visibility: hidden;
-        }
-
-        .bottom-nav-loading::after {
-            visibility: visible;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .card-bottom-loading::after {
-            visibility: visible;
-        }
-
-        .bottom-nav-loading::after {
-            visibility: hidden;
-        }
-    }
-
-    :root {
-        --dashboard-layout-side-nav: url('background.jpg');
-    }
-
-    .brand-logo-wrapper {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .brand-logo-wrapper > * {
-        margin: 0.4rem;
-    }
-
-    .brand-in-page-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--background-color);
-        box-shadow: 5px 0 10px var(--shadow);
-    }
-
-    .brand-in-page {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .brand-in-page a {
-        justify-content: center;
-        align-items: center;
-        padding: 10px 17px;
-        display: inline-flex;
-    }
-
-    .brand-in-page a > * {
-        margin: 0.2rem;
-    }
-
-    @media only screen and (max-width: 799px) {
-        .brand-logo-wrapper > * {
-            margin: 0.2rem;
-        }
-
-        .brand-in-page-wrapper {
-            display: flex;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .brand-in-page-wrapper {
-            display: none;
-        }
-    }
-
-    @media (hover: hover) {
-        .brand-in-page a:hover {
-            background: none;
-        }
-    }
-
-    :root {
-        --social: #898989;
-        --twitter: #00aced;
-        --google: #4286f5;
-        --facebook: #1877f2;
-        --linkedin: #2867b2;
-        --vk: #4a76a8;
-        --twitch: #8c45f6;
-        --dribbble: #ea4c89;
-        --reddit: #ff4500;
-        --pinterest: #e60023;
-        --yandex: #e61400;
-        --github: #171515;
-        --youtube: #e52d27;
-        --stripe: #4553ff;
-        --coinbase: #1652f0;
-        --paypal: #169BD7;
-    }
-
-    .profile-img-badge, .profile-img-full {
-        display: block;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        border-radius: 99em;
-        border: 1px solid var(--contrast);
-    }
-
-    .profile-img-badge {
-        width: 38px;
-        height: 38px;
-        box-shadow: 0 3px 2px var(--shadow);
-    }
-
-    .profile-img-full {
-        width: 100px;
-        height: 100px;
-        box-shadow: 0 3px 2px var(--shadow);
-    }
-
-    .in-page-profile-img-wrapper {
-        border-radius: 99em;
-        margin-bottom: 2rem;
-        box-shadow: 0 3px 2px var(--shadow);
-        border: none;
-    }
-
-    .shine {
-        overflow: hidden;
-        position: relative;
-        -webkit-mask-image: -webkit-radial-gradient(white, black);
-    }
-
-    .shine:after {
-        -webkit-animation: shine 5s ease-in-out infinite;
-        animation: shine 5s ease-in-out infinite;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        content: "";
-        position: absolute;
-        top: -110%;
-        left: -210%;
-        width: 200%;
-        height: 200%;
-        opacity: 0;
-        transform: rotate(30deg);
-        background: rgba(255, 255, 255, 0.13);
-        background: linear-gradient(to right, var(--color-alpha-0-13) 0%, var(--color-alpha-0-13) 77%, var(--color-alpha-0-5) 92%, rgba(255, 255, 255, 0) 100%);
-    }
-
-    @-webkit-keyframes shine {
-        10% {
-            opacity: 1;
-            top: -30%;
-            left: -30%;
-            transition-property: left, top, opacity;
-            transition-duration: 0.7s, 0.7s, 0.15s;
-            transition-timing-function: ease;
-        }
-        100% {
-            opacity: 0;
-            top: -30%;
-            left: -30%;
-            transition-property: left, top, opacity;
-        }
-    }
-
-    @keyframes shine {
-        10% {
-            opacity: 1;
-            top: -30%;
-            left: -30%;
-            transition-property: left, top, opacity;
-            transition-duration: 0.7s, 0.7s, 0.15s;
-            transition-timing-function: ease;
-        }
-        100% {
-            opacity: 0;
-            top: -30%;
-            left: -30%;
-            transition-property: left, top, opacity;
-        }
-    }
-
-    .bounce-stage {
-        border-bottom: 3px solid var(--shadow);
-        display: flex;
-        justify-content: center;
-        width: 20%;
-    }
-
-    .bounce {
-        -webkit-animation-duration: 2s;
-        animation-duration: 2s;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        transform-origin: bottom;
-        -webkit-animation-name: bounce;
-        animation-name: bounce;
-        -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
-        animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
-    }
-
-    @-webkit-keyframes bounce {
-        0% {
-            transform: scale(1, 1) translateY(0);
-        }
-        10% {
-            transform: scale(1.1, 0.9) translateY(0);
-        }
-        30% {
-            transform: scale(0.9, 1.1) translateY(-40px);
-        }
-        50% {
-            transform: scale(1.05, 0.95) translateY(0);
-        }
-        57% {
-            transform: scale(1, 1) translateY(-7px);
-        }
-        64% {
-            transform: scale(1, 1) translateY(0);
-        }
-        100% {
-            transform: scale(1, 1) translateY(0);
-        }
-    }
-
-    @keyframes bounce {
-        0% {
-            transform: scale(1, 1) translateY(0);
-        }
-        10% {
-            transform: scale(1.1, 0.9) translateY(0);
-        }
-        30% {
-            transform: scale(0.9, 1.1) translateY(-40px);
-        }
-        50% {
-            transform: scale(1.05, 0.95) translateY(0);
-        }
-        57% {
-            transform: scale(1, 1) translateY(-7px);
-        }
-        64% {
-            transform: scale(1, 1) translateY(0);
-        }
-        100% {
-            transform: scale(1, 1) translateY(0);
-        }
-    }
-
-    .circle {
-        border-radius: 99em;
-    }
-
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- integrity generated at https://www.srihash.org -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GY64QMRBC"
+          integrity="sha384-1JVP7iZOsX9mqDq1U3KZOuI4RERVDpzCzxJ6vCMXrlq1+VzqE4TSzQndSe4nARZB"
+          crossorigin="anonymous"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push( arguments );
+    }
+
+    gtag( "js", new Date() );
+
+    gtag( "config", "G-2GY64QMRBC" );
+  </script>
+
+  <base href="/"/>
+  <title>Open Template Hub</title>
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content='width=device-width, initial-scale=1, viewport-fit=cover' name='viewport'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/favicons/favicon.png" rel="icon" type="image/x-icon">
+  <link href="assets/favicons/site.webmanifest" rel="manifest">
+  <link color="#43b043" href="assets/favicons/safari-pinned-tab.svg" rel="mask-icon">
+
+  <meta content="assets/favicons/browserconfig.xml" name="msapplication-config"/>
+  <meta content="#43b043" name="msapplication-TileColor">
+
+  <style type="text/css">
     html, body {
-        min-height: 100vh;
-        height: auto;
+      min-height: 100vh;
+      height: auto;
     }
 
     body {
-        margin: 0;
-        font-family: Roboto, Helvetica, Arial, sans-serif;
-        overflow: auto;
-        font-size: 17px;
+      margin: 0;
+      overflow: auto;
+      font-size: 17px;
+    }
+
+    body, textarea, input {
+      font-family: Roboto, Helvetica, Arial, sans-serif;
     }
 
     body::-webkit-scrollbar {
-        width: 0.25rem;
+      width: 0.25em;
     }
 
     body::-webkit-scrollbar-track:vertical {
-        background: var(--lighter-contrast);
+      background: #b4b4b4;
     }
 
     body::-webkit-scrollbar-thumb:vertical {
-        background: var(--darker-contrast);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        body::-webkit-scrollbar-track:vertical {
-            background: var(--darker-contrast);
-        }
-
-        body::-webkit-scrollbar-thumb:vertical {
-            background: var(--lighter-contrast);
-        }
+      background: #efefef;
     }
 
     body::-webkit-scrollbar:horizontal {
-        display: none;
+      display: none;
     }
 
-    p {
-        word-break: break-all;
+    div * {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
     }
 
-    p, a, h1, h2, h3, h4, h5, h6, label {
-        color: var(--color);
-        font-weight: 300;
+    /* IE 10+ */
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: none !important;
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0 !important;
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    p, a, h1, h2, h3, h4, h5, h6, label, ul, li {
+      color: #545454;
+      font-weight: 300;
+      word-break: break-word;
     }
 
     a {
-        text-decoration: none;
+      text-decoration: none;
     }
 
     hr {
-        border: 1px solid var(--lighter-contrast);
+      border: 1px solid #b4b4b4;
     }
 
-    .dim {
-        color: var(--lighter-contrast);
+    .dim p, .dim a, .dim h1, .dim h2, .dim h3, .dim h4, .dim h5, .dim h6, .dim label, .dim ul, .dim li {
+      color: #b4b4b4;
+      border-color: #b4b4b4;
     }
 
-    .section-header > * {
-        margin: 0.4rem;
-    }
+    @media (prefers-color-scheme: dark) {
+      body::-webkit-scrollbar-track:vertical {
+        background: #efefef;
+      }
 
-    .section-output {
-        margin: 0.7rem 0.4rem;
-    }
-
-    .hero {
-        margin-top: 12vh;
-        text-align: center;
-        margin-bottom: 200px;
-    }
-
-    .hero h2 {
-        margin-bottom: 25px;
-    }
-
-    .hero .error-text {
-        display: flex;
-        justify-content: center;
-    }
-
-    .hero .quote {
-        margin-top: 4em;
-        padding: 0 10%;
-    }
-
-    .hero .author {
-        color: var(--brand-color);
-    }
-
-    @media only screen and (max-width: 799px) {
-        .top-shadow {
-            display: block;
-            height: 2px;
-            padding: 0;
-            background-color: var(--brand-color);
-            box-shadow: 5px 0 10px var(--brand-color);
-        }
-
-        .hero {
-            margin-top: 10vh;
-            margin-bottom: 150px;
-        }
-
-        .hero h2 {
-            margin-bottom: 15px;
-        }
-
-        .hero .brand-logo {
-            height: 75px;
-        }
-
-        .hero .quote {
-            margin-top: 2.5em;
-            font-size: 1em;
-        }
-
-        .hero .author {
-            font-size: 0.7em;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .top-shadow {
-            display: none;
-        }
-
-        .hero .quote {
-            font-size: 0.9em;
-        }
-
-        .hero .author {
-            font-size: 0.8em;
-        }
+      body::-webkit-scrollbar-thumb:vertical {
+        background: #b4b4b4;
+      }
     }
 
     @media (hover: hover) {
-        a:hover {
-            color: var(--darker);
-            background: var(--hover);
-        }
+
+      a:hover {
+        color: #2b2b2b;
+      }
     }
 
-:root {
-  --brand-color: #43b043;
-  --brand-background: #5cb05c;
-  --brand-light: #c9e8c9;
-  --hover: rgba(98, 150, 89, 0.2);
-  --overlay: rgba(67, 176, 67, 0.3);
-
-  // shine animation colors
-  --color-alpha-0-5: rgba(31, 108, 26, 0.5);
-  --color-alpha-0-13: rgba(38, 108, 26, 0.13);
-}
-
-.dark-theme {
-  --brand-light: #617061;
-  --overlay: rgba(28, 76, 28, 0.6);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brand-light: #617061;
-    --overlay: rgba(28, 76, 28, 0.6);
-  }
-
-  .dark-theme {
-    --brand-light: #c9e8c9;
-    --overlay: rgba(67, 176, 67, 0.3);
-  }
-}
-</style>
-    <style>.raw-landing-layout-page[_ngcontent-pby-c96] {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-size: cover;
-        background-color: var(--background-color);
+    .index-splash-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
     }
 
-    .header[_ngcontent-pby-c96] {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 90px;
-        z-index: 2;
+    .index-splash-hero {
+      margin-top: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
     }
 
-    .header-filler[_ngcontent-pby-c96] {
-        height: 90px;
+    .index-splash-hero img {
+      height: 55px;
     }
 
-    .raw-landing-layout-page-content[_ngcontent-pby-c96] {
-        min-height: 120vh;
+    .index-splash-hero h2 {
+      color: #545454;
+      margin-top: 20px;
     }
 
-    @media only screen and (max-width: 799px) {
-        .header[_ngcontent-pby-c96], .header-filler[_ngcontent-pby-c96] {
-            display: none;
-        }
+    .index-splash-hero h3 {
+      color: #228822;
     }
 
-    @media only screen and (min-width: 800px) {
-        .header[_ngcontent-pby-c96], .header-filler[_ngcontent-pby-c96] {
-            display: block;
-        }
+    .index-splash-hero a {
+      color: #228822;
+      font-weight: 500;
+      cursor: pointer;
     }
 
-    @media screen and (min-aspect-ratio: 4/3) {
-        .raw-landing-layout-page-content[_ngcontent-pby-c96] {
-            min-height: 200vh;
-        }
-    }
-</style>
-    <style>.top-nav[_ngcontent-pby-c95] {
-        height: 50px;
-        padding: 20px 55px;
-        display: flex;
-        border-radius: 3px;
-        background-color: var(--background-color);
-        box-shadow: 5px 0 10px var(--shadow);
+    @media only screen and (max-width: 999px) {
+      .index-splash-hero {
+        max-width: 90%;
+      }
     }
 
-    .top-nav[_ngcontent-pby-c95] a[_ngcontent-pby-c95] {
-        border-radius: 3px;
-        padding: 10px 17px;
-        display: inline-flex;
-        align-items: center;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .top-nav[_ngcontent-pby-c95] a[_ngcontent-pby-c95]:first-child {
-        margin-right: auto;
-    }
-
-    .top-nav[_ngcontent-pby-c95] a[_ngcontent-pby-c95]:first-child:hover {
-        background: none;
-    }
-
-    .login[_ngcontent-pby-c95] {
-        color: var(--brand-color);
-        border-radius: 0;
-        border-bottom: var(--brand-color) 1px solid;
-    }
-
-    .login[_ngcontent-pby-c95]:hover {
-        color: white;
-        border-radius: 3px;
-        background: var(--brand-color);
-    }
-
-    .top-nav[_ngcontent-pby-c95] .brand[_ngcontent-pby-c95] > *[_ngcontent-pby-c95] {
-        margin: 0.2rem;
-    }
-
-    .top-nav[_ngcontent-pby-c95] a[_ngcontent-pby-c95] i[_ngcontent-pby-c95] {
-        margin: 0.35rem;
-        font-size: 22px;
-    }
-
-    @media only screen and (max-width: 799px) {
-        .top-nav[_ngcontent-pby-c95] {
-            display: none;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .top-nav[_ngcontent-pby-c95] a[_ngcontent-pby-c95] {
-            display: inline-flex;
-        }
-    }
-</style>
-    <style>.footer[_ngcontent-pby-c85] {
-        display: flex;
-        flex-direction: row;
-        box-shadow: 5px 0 30px var(--shadow);
-        background-color: var(--background-color);
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        padding: 15px 0;
-        font-size: 13px;
-    }
-
-    .footer[_ngcontent-pby-c85] a[_ngcontent-pby-c85] {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 5px 0;
-        min-width: 33%;
-    }
-
-    .footer[_ngcontent-pby-c85] a[_ngcontent-pby-c85] i[_ngcontent-pby-c85] {
-        margin-right: 10px;
-        margin-left: 25%;
-    }
-
-    @media only screen and (max-width: 799px) {
-        .footer[_ngcontent-pby-c85] {
-            margin-bottom: calc(55px + env(safe-area-inset-bottom));
-            font-size: 12px;
-        }
-
-        .footer[_ngcontent-pby-c85] a[_ngcontent-pby-c85] {
-            min-width: 50%;
-            padding: 3px 0;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .footer[_ngcontent-pby-c85] {
-            margin-bottom: 0;
-        }
+    @media only screen and (min-width: 1000px) {
+      .index-splash-hero {
+        max-width: 50%;
+      }
     }
 
     @media (hover: hover) {
-        .footer[_ngcontent-pby-c85] a[_ngcontent-pby-c85]:hover {
-            background: none;
-        }
-    }
-</style>
-    <style>.bottom-nav[_ngcontent-pby-c86] {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        height: 55px;
-        width: 100vw;
-        display: flex;
-        justify-content: flex-start;
-        overflow-x: auto;
-        background-color: var(--background-color);
-        box-shadow: 0 0 5px var(--shadow);
-        z-index: 10;
-        padding-bottom: env(safe-area-inset-bottom);
-    }
 
-    .bottom-nav[_ngcontent-pby-c86] a[_ngcontent-pby-c86] {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-width: 25vw;
-        overflow: hidden;
-        white-space: nowrap;
-        font-size: 13px;
-        transition: background-color 0.1s ease-in-out;
+      .index-splash-hero a:hover {
+        color: #43B043;
+      }
     }
-
-    .login[_ngcontent-pby-c86] {
-        color: var(--brand-color);
-        border-bottom: var(--brand-color) 1px solid;
-    }
-
-    .login[_ngcontent-pby-c86]:hover {
-        color: white;
-        background: var(--brand-color);
-    }
-
-    .bottom-nav[_ngcontent-pby-c86] a[_ngcontent-pby-c86] i[_ngcontent-pby-c86] {
-        margin: 0.2rem;
-        font-size: 19px;
-    }
-
-    @media only screen and (max-width: 799px) {
-        .bottom-nav[_ngcontent-pby-c86] {
-            visibility: visible;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .bottom-nav[_ngcontent-pby-c86] {
-            visibility: hidden;
-        }
-    }
-</style>
-    <style>.maintenance-page[_ngcontent-pby-c98] {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 35px;
-    }
-
-    @media only screen and (max-width: 799px) {
-        .maintenance-page[_ngcontent-pby-c98] {
-            font-size: 23px;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .maintenance-page[_ngcontent-pby-c98] {
-            font-size: 35px;
-        }
-    }
-</style>
-    <style>.button1[_ngcontent-pby-c45] {
-        border: none;
-        border-radius: 3px;
-        padding: 1.2rem 2.2rem;
-        font-weight: 300;
-        font-size: 14px;
-        background-color: var(--color);
-        color: var(--contrast);
-        cursor: pointer;
-        transition: 200ms ease;
-        margin: 0.25rem 0.25rem 1rem;
-    }
-
-    .button1[_ngcontent-pby-c45]:disabled {
-        pointer-events: none;
-        filter: opacity(60%);
-    }
-
-    @media (hover: hover) {
-        .button1[_ngcontent-pby-c45]:hover {
-            box-shadow: 0 4px 5px 0 var(--shadow);
-            color: var(--darker-contrast);
-        }
-    }
-
-</style>
+  </style>
 </head>
 <body>
-        <div _ngcontent-pby-c96="">
-            <div _ngcontent-pby-c96="" class="raw-landing-layout-page">
-                <div _ngcontent-pby-c96="" class="header-filler"></div>
-                <div _ngcontent-pby-c96="" class="raw-landing-layout-page-content">
-                        <div _ngcontent-pby-c98="" class="maintenance-page">
-                            <div _ngcontent-pby-c98="" class="top-shadow"></div><!--bindings={
-  "ng-reflect-ng-if": "true"
-}-->
-                            <div _ngcontent-pby-c98="" class="hero">
-                                <div _ngcontent-pby-c98="" class="brand-logo-wrapper">
-                                    <div _ngcontent-pby-c98="" class="bounce-stage"><img _ngcontent-pby-c98=""
-                                                                                         height="100" alt="logo"
-                                                                                         class="bounce brand-logo"
-                                                                                         src="icon.png">
-                                    </div>
-                                    <h2 _ngcontent-pby-c98="">Under maintenance</h2></div>
-                                <h6 _ngcontent-pby-c98="">Please check again later</h6>
-                                <h2 _ngcontent-pby-c98="" id="quote" class="quote"></h2>
-                                <h3 _ngcontent-pby-c98="" id="author" class="author"></h3></div>
-                        </div>
-                    </div>
-            </div>
-        </div>
+<div class="index-splash-page">
+  <div class="index-splash-hero">
+    <img alt="logo" src="./assets/logo/brand-logo.png"/>
+    <h2>Open Template Hub</h2>
+    <h4>
+      Minimizes your effort while building a new software business with our open source GitHub micro server templates
+      and responsive web UI + mobile UI templates
+    </h4>
+    <h3>
+      Open Template Hub is undergoing maintenance
+      <br/>
+      follow the latest updates from our
+      <a href="https://www.linkedin.com/company/open-template-hub">linkedIn</a> or <a href="https://twitter.com/opentemplatehub">twitter</a> accounts
+    </h3>
+  </div>
+</div>
 </body>
-<script type="text/javascript">
-	    const rand = Math.floor(Math.random() * 110);
-	    var Quotes = {
-  quotes: [
-    {
-      quote: 'Learning is not attained by chance, it must be sought for with ardor and attended to with diligence.',
-      author: 'Abigail Adams'
-    },
-    {
-      quote: 'Upon the subject of education ... I can only say that I view it as the most important subject which we as a people may be engaged in.',
-      author: 'Abraham Lincoln'
-    },
-    {
-      quote: 'It is as impossible to withhold education from the receptive mind as it is impossible to force it upon the unreasoning.',
-      author: 'Agnes Repplierg'
-    },
-    {
-      quote: 'Education is what remains after one has forgotten what one has learned in school.',
-      author: 'Albert Einstein'
-    },
-    {
-      quote: 'Wisdom is not a product of schooling but of the lifelong attempt to acquire it.',
-      author: 'Albert Einstein'
-    },
-    {
-      quote: 'I am indebted to my father for living, but to my teacher for living well.',
-      author: 'Alexander the Great'
-    },
-    {
-      quote: 'The best teachers are those who show you where to look but don’t tell you what to see.',
-      author: 'Alexandra K. Trenfor'
-    },
-    {
-      quote: 'What we learn with pleasure we never forget.',
-      author: 'Alfred Mercier'
-    },
-    {
-      quote: 'Nine-tenths of education is encouragement.',
-      author: 'Anatole France'
-    },
-    {
-      quote: 'If you think education is expensive, try ignorance.',
-      author: 'Andy McIntyre'
-    },
-    {
-      quote: 'I agree that a love of reading is a great gift for a parent to pass on to his or her child.',
-      author: 'Ann Brashares'
-    },
-    {
-      quote: 'Develop a passion for learning. If you do, you will never cease to grow.',
-      author: 'Anthony J. D\'Angelo'
-    },
-    {
-      quote: 'Wisdom.... comes not from age, but from education and learning.',
-      author: 'Anton Chekhov'
-    },
-    {
-      quote: 'The roots of education are bitter, but the fruit is sweet.',
-      author: 'Aristotle'
-    },
-    {
-      quote: 'Educating the mind without educating the heart is no education at all.',
-      author: 'Aristotle'
-    },
-    {
-      quote: 'For the things we have to learn before we can do them, we learn by doing them.',
-      author: 'Aristotle'
-    },
-    {
-      quote: 'The educated differ from the uneducated as much as the living differ from the dead.',
-      author: 'Aristotle'
-    },
-    {
-      quote: 'The beautiful thing about learning is that nobody can take it away from you.',
-      author: 'B.B. King'
-    },
-    {
-      quote: 'An investment in knowledge pays the best interest.',
-      author: 'Benjamin Franklin'
-    },
-    {
-      quote: 'We learn from failure, not from success!',
-      author: 'Bram Stoker'
-    },
-    {
-      quote: 'Education is the power to think clearly, the power to act well in the world’s work, and the power to appreciate life.',
-      author: 'Brigham Young'
-    },
-    {
-      quote: 'Education without values, as useful as it is, seems rather to make man a more clever devil.',
-      author: 'C.S. Lewis'
-    },
-    {
-      quote: 'The only person who is educated is the one who has learned how to learn and change.',
-      author: 'Carl Rogers'
-    },
-    {
-      quote: 'Education is the best friend. An educated person is respected everywhere. Education beats the beauty and the youth.',
-      author: 'Chanakya'
-    },
-    {
-      quote: 'Learning is like rowing upstream: not to advance is to drop back.',
-      author: 'Chinese proverb'
-    },
-    {
-      quote: 'Learning is a treasure that will follow its owner everywhere.',
-      author: 'Chinese Proverb'
-    },
-    {
-      quote: 'Knowledge will bring you the opportunity to make a difference.',
-      author: 'Claire Fagin'
-    },
-    {
-      quote: 'Man can learn nothing except by going from the known to the unknown.',
-      author: 'Claude Bernard'
-    },
-    {
-      quote: 'It is what we know already that often prevents us from learning.',
-      author: 'Claude Bernard'
-    },
-    {
-      quote: 'You cannot open a book without learning something.',
-      author: 'Confucius'
-    },
-    {
-      quote: 'Education breeds confidence. Confidence breeds hope. Hope breeds peace.',
-      author: 'Confucius'
-    },
-    {
-      quote: 'The essence of knowledge is, having it, to apply it; not having it, to confess your ignorance.',
-      author: 'Confuciuss'
-    },
-    {
-      quote: 'You are always a student, never a master. You have to keep moving forward.',
-      author: 'Conrad Hall'
-    },
-    {
-      quote: 'Your library is your paradise.',
-      author: 'Desiderius Erasmus'
-    },
-    {
-      quote: 'You live and learn. At any rate, you live.',
-      author: 'Douglas Adams'
-    },
-    {
-      quote: 'Education is the ability to meet life\'s situations.',
-      author: 'Dr. John G. Hibben'
-    },
-    {
-      quote: 'The more that you read, the more things you will know, the more that you learn, the more places you’ll go.',
-      author: 'Dr. Seuss'
-    },
-    {
-      quote: 'Learning is not compulsory. Neither is survival.',
-      author: 'Dr. W. Edwards Deming'
-    },
-    {
-      quote: 'Education is a better safeguard of liberty than a standing army.',
-      author: 'Edward Everett'
-    },
-    {
-      quote: 'A good education is a foundation for a better future.',
-      author: 'Elizabeth Warren'
-    },
-    {
-      quote: 'Only the educated are free.',
-      author: 'Epictetus'
-    },
-    {
-      quote: 'It is impossible for a man to learn what he thinks he already knows.',
-      author: 'Epictetus'
-    },
-    {
-      quote: 'Education is helping the child realize his potentialities.',
-      author: 'Eric Fromm'
-    },
-    {
-      quote: 'Education is the methodical creation of the habit of thinking.',
-      author: 'Ernest Dimnet'
-    },
-    {
-      quote: 'Education is the art of making man ethical.',
-      author: 'Georg Wilhelm Friedrich Hegel'
-    },
-    {
-      quote: 'Education is learning what you didn\'t know you didn\'t know.',
-      author: 'George Boas'
-    },
-    {
-      quote: 'The progress of the world depends almost entirely upon education.',
-      author: 'George Eastman'
-    },
-    {
-      quote: 'Every student can learn, just not on the same day, or the same way.',
-      author: 'George Evans'
-    },
-    {
-      quote: 'Education is the key to unlock the golden door of freedom.',
-      author: 'George Washington Carver'
-    },
-    {
-      quote: 'Education is a continual process, it\'s like a bicycle... If you don\'t pedal you don\'t go forward.',
-      author: 'George Weah'
-    },
-    {
-      quote: 'Education is simply the soul of a society as it passes from one generation to another.',
-      author: 'Gilbert K. Chesterton'
-    },
-    {
-      quote: 'All things good to know are difficult to learn.',
-      author: 'Greek proverb'
-    },
-    {
-      quote: 'They know enough who know how to learn.',
-      author: 'Henry Adams'
-    },
-    {
-      quote: 'What does education often do? It makes a straight-cut ditch of a free, meandering brook.',
-      author: 'Henry David Thoreau'
-    },
-    {
-      quote: 'The great aim of education is not knowledge but action.',
-      author: 'Herbert Spencer'
-    },
-    {
-      quote: 'Self-education is, I firmly believe, the only kind of education there is.',
-      author: 'Isaac Asimov'
-    },
-    {
-      quote: 'The minute that you\'re not learning I believe you\'re dead.',
-      author: 'Jack Nicholson'
-    },
-    {
-      quote: 'Formal education will make you a living; self-education will make you a fortune.',
-      author: 'Jim Rohn'
-    },
-    {
-      quote: 'By seeking and blundering we learn.',
-      author: 'Johann Wolfgang von Goethe'
-    },
-    {
-      quote: 'Education makes a greater difference between man and man than nature has made between man and brute.',
-      author: 'John Adams'
-    },
-    {
-      quote: 'Education is not preparation for life; education is life itself.',
-      author: 'John Dewey'
-    },
-    {
-      quote: 'Learning starts with failure; the first failure is the beginning of education.',
-      author: 'John Hersey'
-    },
-    {
-      quote: 'Learning is not the product of teaching. Learning is the product of the activity of learners.',
-      author: 'John Holt'
-    },
-    {
-      quote: 'When you take the free will out of education, that turns it into schooling.',
-      author: 'John Taylor Gatto'
-    },
-    {
-      quote: 'The learning process continues until the day you die.',
-      author: 'Kirk Douglas'
-    },
-    {
-      quote: 'Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family.',
-      author: 'Kofi Annan'
-    },
-    {
-      quote: 'Change is the end result of all true learning.',
-      author: 'Leo Buscaglia'
-    },
-    {
-      quote: 'The noblest pleasure is the joy of understanding.',
-      author: 'Leonardo da Vinci'
-    },
-    {
-      quote: 'Study without desire spoils the memory, and it retains nothing that it takes in.',
-      author: 'Leonardo da Vinci'
-    },
-    {
-      quote: 'We learn more by looking for the answer to a question and not finding it than we do from learning the answer itself.',
-      author: 'Lloyd Alexander'
-    },
-    {
-      quote: 'Live as if you were to die tomorrow. Learn as if you were to live forever.',
-      author: 'Mahatma Gandhi'
-    },
-    {
-      quote: 'By education, I mean an all-round drawing of the best in child and man in body, mind and spirit.',
-      author: 'Mahatma Gandhi'
-    },
-    {
-      quote: 'They cannot stop me. I will get my education, if it is in the home, school, or anyplace.',
-      author: 'Malala Yousafzai'
-    },
-    {
-      quote: 'I don\'t want revenge on the Taliban, I want education for sons and daughters of the Taliban.',
-      author: 'Malala Yousafzai'
-    },
-    {
-      quote: 'The content of a book holds the power of education and it is with this power that we can shape our future and change lives.',
-      author: 'Malala Yousafzai'
-    },
-    {
-      quote: 'Education’s purpose is to replace an empty mind with an open one.',
-      author: 'Malcolm S. Forbes'
-    },
-    {
-      quote: 'Education is the passport to the future, for tomorrow belongs to those who prepare for it today.',
-      author: 'Malcolm X'
-    },
-    {
-      quote: 'Education is for improving the lives of others and for leaving your community and world better than you found it.',
-      author: 'Marian Wright Edelman'
-    },
-    {
-      quote: 'A person who won\'t read has no advantage over one who can\'t read.',
-      author: 'Mark Twain'
-    },
-    {
-      quote: 'I have never let my schooling interfere with my education.',
-      author: 'Mark Twain'
-    },
-    {
-      quote: 'Education: that which reveals to the wise, and conceals from the stupid, the vast limits of their knowledge.',
-      author: 'Mark Twain'
-    },
-    {
-      quote: 'Never let formal education get in the way of your learning.',
-      author: 'Mark Twain'
-    },
-    {
-      quote: 'I think you learn more if you\'re laughing at the same time.',
-      author: 'Mary Ann Shaffer & Annie Barrows'
-    },
-    {
-      quote: 'The more I live, the more I learn. The more I learn, the more I realize, the less I know.',
-      author: 'Michel Legrand'
-    },
-    {
-      quote: 'When girls are educated, their countries become stronger and more prosperous.',
-      author: 'Michelle Obama'
-    },
-    {
-      quote: 'To me education is a leading out of what is already there in the pupil\'s soul.',
-      author: 'Muriel Spark'
-    },
-    {
-      quote: 'Education is the most powerful weapon which you can use to change the world.',
-      author: 'Nelson Mandela'
-    },
-    {
-      quote: 'Take the attitude of a student, never be too big to ask questions, never know too much to learn something new.',
-      author: 'Og Mandino'
-    },
-    {
-      quote: 'Man\'s mind, once stretched by a new idea, never regains its original dimensions.',
-      author: 'Oliver Wendell Holmes'
-    },
-    {
-      quote: 'A man\'s mind, stretched by new ideas, may never return to its original dimensions.',
-      author: 'Oliver Wendell Holmes Jr.'
-    },
-    {
-      quote: 'Education is teaching our children to desire the right things.',
-      author: 'Plato'
-    },
-    {
-      quote: 'You learn something every day if you pay attention.',
-      author: 'Ray LeBlond'
-    },
-    {
-      quote: 'Education is the ability to listen to almost anything without losing your temper or your self-confidence.',
-      author: 'Robert Frost'
-    },
-    {
-      quote: 'Let the improvement of yourself keep you so busy that you have no time to criticize others.',
-      author: 'Roy T. Bennett'
-    },
-    {
-      quote: 'Education should light a fire within us to improve us and help our world.',
-      author: 'Sarah Josepf'
-    },
-    {
-      quote: 'Education is the kindling of a flame, not the filling of a vessel.',
-      author: 'Socrates'
-    },
-    {
-      quote: 'One learns by doing a thing; for though you think you know it, you have no certainty until you try.',
-      author: 'Sophocles'
-    },
-    {
-      quote: 'I was reading the dictionary. I thought it was a poem about everything.',
-      author: 'Steven Wright'
-    },
-    {
-      quote: 'The whole purpose of education is to turn mirrors into windows.',
-      author: 'Sydney J. Harris'
-    },
-    {
-      quote: 'A teacher is one who makes himself progressively unnecessary.',
-      author: 'Thomas Carruthers'
-    },
-    {
-      quote: 'The man who reads nothing at all is better educated than the man who reads nothing but newspapers.',
-      author: 'Thomas Jefferson'
-    },
-    {
-      quote: 'Men, in teaching others, learn themselves.',
-      author: 'Thomas Lodge'
-    },
-    {
-      quote: 'He who opens a school door, closes a prison.',
-      author: 'Victor Hugo'
-    },
-    {
-      quote: 'The more I read, the more I acquire, the more certain I am that I know nothing.',
-      author: 'Voltaire'
-    },
-    {
-      quote: 'Education is not the filling of a pail, but the lighting of a fire.',
-      author: 'W.B. Yeats'
-    },
-    {
-      quote: 'Whatever the cost of our libraries, the price is cheap compared to that of an ignorant nation.',
-      author: 'Walter Cronkite'
-    },
-    {
-      quote: 'Education is a progressive discovery of our own ignorance.',
-      author: 'Will Durant'
-    },
-    {
-      quote: 'The aim of education is the knowledge, not of facts, but of values.',
-      author: 'William Burroughs'
-    },
-    {
-      quote: 'Education is not the filling of a pail, but the lighting of a fire.',
-      author: 'William Butler Yeats'
-    },
-    {
-      quote: 'The modern world belongs to the half-educated, a rather difficult class, because they do not realize how little they know.',
-      author: 'William R. Inge'
-    }
-  ]
-};
-var selectedQuote = Quotes.quotes[rand];
-document.getElementById("quote").innerHTML = selectedQuote.quote;
-document.getElementById("author").innerHTML = selectedQuote.author;
-</script>
 </html>
