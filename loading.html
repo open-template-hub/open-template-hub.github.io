@@ -27,14 +27,14 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link href="assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="assets/favicons/favicon.png" rel="icon" type="image/x-icon">
+  <link href="assets/favicons/favicon.png" rel="shortcut icon" type="image/png">
   <link href="assets/favicons/site.webmanifest" rel="manifest">
   <link color="#43b043" href="assets/favicons/safari-pinned-tab.svg" rel="mask-icon">
 
   <meta content="assets/favicons/browserconfig.xml" name="msapplication-config"/>
   <meta content="#43b043" name="msapplication-TileColor">
 
-  <style type="text/css">
+  <style>
     html, body {
       min-height: 100vh;
       height: auto;
@@ -115,13 +115,6 @@
       }
     }
 
-    @media (hover: hover) {
-
-      a:hover {
-        color: #2b2b2b;
-      }
-    }
-
     .index-splash-page {
       position: fixed;
       top: 0;
@@ -163,25 +156,6 @@
       cursor: pointer;
     }
 
-    @media only screen and (max-width: 999px) {
-      .index-splash-hero {
-        max-width: 90%;
-      }
-    }
-
-    @media only screen and (min-width: 1000px) {
-      .index-splash-hero {
-        max-width: 50%;
-      }
-    }
-
-    @media (hover: hover) {
-
-      .index-splash-hero a:hover {
-        color: #43B043;
-      }
-    }
-
     .index-splash-bar {
       width: 130px;
       height: 2px;
@@ -208,16 +182,38 @@
         background: #228822;
       }
     }
+
+    @media only screen and (max-width: 999px) {
+      .index-splash-hero {
+        max-width: 90%;
+      }
+    }
+
+    @media only screen and (min-width: 1000px) {
+      .index-splash-hero {
+        max-width: 50%;
+      }
+    }
+
+    @media (hover: hover) {
+      a:hover {
+        color: #2b2b2b;
+      }
+
+      .index-splash-hero a:hover {
+        color: #43B043;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="index-splash-page">
-    <div class="index-splash-hero">
-      <img alt="logo" src="./assets/logo/brand-logo.png"/>
-      <h2>Open Template Hub</h2>
-      <div class="index-splash-bar">
-      </div>
+<div class="index-splash-page">
+  <div class="index-splash-hero">
+    <img alt="logo" src="./assets/logo/brand-logo.png"/>
+    <h2>Open Template Hub</h2>
+    <div class="index-splash-bar">
     </div>
   </div>
+</div>
 </body>
 </html>
