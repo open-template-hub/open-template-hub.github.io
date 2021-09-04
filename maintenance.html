@@ -84,6 +84,15 @@
 
       --color-alpha-0-5: var(--color-alpha-green-theme-0-5);
       --color-alpha-0-13: var(--color-alpha-green-theme-0-13);
+
+      --color-light-mode: #545454;
+      --darker-light-mode: #2b2b2b;
+
+      --color-dark-mode: #e0e0e0;
+      --darker-dark-mode: #f0f0f0;
+
+      --color: var(--color-light-mode);
+      --darker: var(--darker-light-mode);
     }
 
     html, body {
@@ -103,14 +112,6 @@
 
     body::-webkit-scrollbar {
       width: 0.25em;
-    }
-
-    body::-webkit-scrollbar-track:vertical {
-      background: #b4b4b4;
-    }
-
-    body::-webkit-scrollbar-thumb:vertical {
-      background: #efefef;
     }
 
     body::-webkit-scrollbar:horizontal {
@@ -138,22 +139,13 @@
     }
 
     p, a, h1, h2, h3, h4, h5, h6, label, ul, li {
-      color: #545454;
+      color: var(--color);
       font-weight: 300;
       word-break: break-word;
     }
 
     a {
       text-decoration: none;
-    }
-
-    hr {
-      border: 1px solid #b4b4b4;
-    }
-
-    .dim p, .dim a, .dim h1, .dim h2, .dim h3, .dim h4, .dim h5, .dim h6, .dim label, .dim ul, .dim li {
-      color: #b4b4b4;
-      border-color: #b4b4b4;
     }
 
     .layers {
@@ -175,16 +167,6 @@
     .top-layer {
       position: absolute;
       left: 0;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body::-webkit-scrollbar-track:vertical {
-        background: #efefef;
-      }
-
-      body::-webkit-scrollbar-thumb:vertical {
-        background: #b4b4b4;
-      }
     }
 
     .index-splash-page {
@@ -212,16 +194,16 @@
     }
 
     .index-splash-hero h2 {
-      color: #545454;
+      color: var(--color);
       margin-top: 20px;
     }
 
     .index-splash-hero h3 {
-      color: #43b043;
+      color: var(--brand-color-green-theme);
     }
 
     .index-splash-hero a {
-      color: #228822;
+      color: var(--brand-color-green-theme);
       font-weight: 500;
       cursor: pointer;
     }
@@ -240,11 +222,11 @@
 
     @media (hover: hover) {
       a:hover {
-        color: #2b2b2b;
+        color: var(--darker);
       }
 
       .index-splash-hero a:hover {
-        color: #43B043;
+        color: var(--brand-color-green-theme);
       }
     }
 
@@ -261,6 +243,9 @@
         --brand-color-lighter-9: var(--brand-color-green-theme-darker-9);
 
         --overlay: var(--overlay-green-theme-darker);
+
+        --color: var(--color-dark-mode);
+        --darker: var(--darker-dark-mode);
       }
 
       .index-splash-page {
