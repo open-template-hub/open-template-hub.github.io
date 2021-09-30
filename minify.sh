@@ -11,44 +11,44 @@ echo "logos"
 if [ ! -d "./assets/min/logo" ]; then
   mkdir assets/min/logo
 fi
-resize-image -i ./assets/logo/brand-logo.png -o ./assets/min/logo/brand-logo.min.png -h 100
-resize-image -i ./assets/logo/brand-logo-broken.png -o ./assets/min/logo/brand-logo-broken.min.png -h 100
-resize-image -i ./assets/logo/brand-logo-merged.png -o ./assets/min/logo/brand-logo-merged.min.png -h 100
-resize-image -i ./assets/logo/brand-logo-pieces.png -o ./assets/min/logo/brand-logo-pieces.min.png -h 100
-resize-image -i ./assets/logo/brand-logo-replace.png -o ./assets/min/logo/brand-logo-replace.min.png -h 100
-resize-image -i ./assets/logo/brand-logo-shine.png -o ./assets/min/logo/brand-logo-shine.min.png -h 100
+resize-image -i ./assets/logo/brand-logo.png -o ./assets/min/logo/brand-logo.min.png -h 200
+resize-image -i ./assets/logo/brand-logo-broken.png -o ./assets/min/logo/brand-logo-broken.min.png -h 200
+resize-image -i ./assets/logo/brand-logo-merged.png -o ./assets/min/logo/brand-logo-merged.min.png -h 200
+resize-image -i ./assets/logo/brand-logo-pieces.png -o ./assets/min/logo/brand-logo-pieces.min.png -h 200
+resize-image -i ./assets/logo/brand-logo-replace.png -o ./assets/min/logo/brand-logo-replace.min.png -h 200
+resize-image -i ./assets/logo/brand-logo-shine.png -o ./assets/min/logo/brand-logo-shine.min.png -h 200
 
 echo "server"
 if [ ! -d "./assets/min/logo/server" ]; then
   mkdir assets/min/logo/server
 fi
-resize-image -i ./assets/logo/server/analytics-server-logo.png -o ./assets/min/logo/server/analytics-server-logo.min.png -h 100
-resize-image -i ./assets/logo/server/auth-server-logo.png -o ./assets/min/logo/server/auth-server-logo.min.png -h 100
-resize-image -i ./assets/logo/server/business-logic-server-logo.png -o ./assets/min/logo/server/business-logic-server-logo.min.png -h 100
-resize-image -i ./assets/logo/server/file-storage-server-logo.png -o ./assets/min/logo/server/file-storage-server-logo.min.png -h 100
-resize-image -i ./assets/logo/server/mail-server-logo.png -o ./assets/min/logo/server/mail-server-logo.min.png -h 100
-resize-image -i ./assets/logo/server/payment-server-logo.png -o ./assets/min/logo/server/payment-server-logo.min.png -h 100
-resize-image -i ./assets/logo/server/orchestration-server-logo.png -o ./assets/min/logo/server/orchestration-server-logo.min.png -h 100
+resize-image -i ./assets/logo/server/analytics-server-logo.png -o ./assets/min/logo/server/analytics-server-logo.min.png -h 200
+resize-image -i ./assets/logo/server/auth-server-logo.png -o ./assets/min/logo/server/auth-server-logo.min.png -h 200
+resize-image -i ./assets/logo/server/business-logic-server-logo.png -o ./assets/min/logo/server/business-logic-server-logo.min.png -h 200
+resize-image -i ./assets/logo/server/file-storage-server-logo.png -o ./assets/min/logo/server/file-storage-server-logo.min.png -h 200
+resize-image -i ./assets/logo/server/mail-server-logo.png -o ./assets/min/logo/server/mail-server-logo.min.png -h 200
+resize-image -i ./assets/logo/server/payment-server-logo.png -o ./assets/min/logo/server/payment-server-logo.min.png -h 200
+resize-image -i ./assets/logo/server/orchestration-server-logo.png -o ./assets/min/logo/server/orchestration-server-logo.min.png -h 200
 
 echo "ui"
 if [ ! -d "./assets/min/logo/ui" ]; then
   mkdir assets/min/logo/ui
 fi
-resize-image -i ./assets/logo/ui/mobile-ui-logo.png -o ./assets/min/logo/ui/mobile-ui-logo.min.png -h 100
-resize-image -i ./assets/logo/ui/web-ui-logo.png -o ./assets/min/logo/ui/web-ui-logo.min.png -h 100
+resize-image -i ./assets/logo/ui/mobile-ui-logo.png -o ./assets/min/logo/ui/mobile-ui-logo.min.png -h 200
+resize-image -i ./assets/logo/ui/web-ui-logo.png -o ./assets/min/logo/ui/web-ui-logo.min.png -h 200
 
 echo "generator"
 if [ ! -d "./assets/min/logo/generator" ]; then
   mkdir assets/min/logo/generator
 fi
-resize-image -i ./assets/logo/generator/server-generator-logo.png -o ./assets/min/logo/generator/server-generator-logo.min.png -h 100
+resize-image -i ./assets/logo/generator/server-generator-logo.png -o ./assets/min/logo/generator/server-generator-logo.min.png -h 200
 
 echo "badge"
 if [ ! -d "./assets/min/badge" ]; then
   mkdir assets/min/badge
 fi
-resize-image -i ./assets/badge/powered-by-dark-mode.png -o ./assets/min/badge/powered-by-dark-mode.min.png -h 100
-resize-image -i ./assets/badge/powered-by-light-mode.png -o ./assets/min/badge/powered-by-light-mode.min.png -h 100
+resize-image -i ./assets/badge/powered-by-dark-mode.png -o ./assets/min/badge/powered-by-dark-mode.min.png -h 200
+resize-image -i ./assets/badge/powered-by-light-mode.png -o ./assets/min/badge/powered-by-light-mode.min.png -h 200
 
 echo "wallpaper"
 if [ ! -d "./assets/min/wallpaper" ]; then
