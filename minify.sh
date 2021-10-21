@@ -72,6 +72,7 @@ if [ ! -d "./assets/min/demo/ui" ]; then
   mkdir assets/min/demo/ui
 fi
 resize-image -i ./assets/demo/ui/company-profile-ui-demo-light.png -o ./assets/min/demo/ui/company-profile-ui-demo-light.min.png -h 400
+resize-image -i ./assets/demo/ui/web-ui-demo-light.png -o ./assets/min/demo/ui/web-ui-demo-light.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-demo-light.png -o ./assets/min/demo/ui/mobile-ui-demo-light.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-demo-dark.png -o ./assets/min/demo/ui/mobile-ui-demo-dark.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-demo-both.png -o ./assets/min/demo/ui/mobile-ui-demo-both.min.png -h 400
