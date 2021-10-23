@@ -79,4 +79,9 @@ resize-image -i ./assets/demo/ui/mobile-ui-demo-light.png -o ./assets/min/demo/u
 resize-image -i ./assets/demo/ui/mobile-ui-demo-dark.png -o ./assets/min/demo/ui/mobile-ui-demo-dark.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-demo-both.png -o ./assets/min/demo/ui/mobile-ui-demo-both.min.png -h 400
 
+if [ ! -d "./assets/min/demo/ui/screenshots" ]; then
+  mkdir assets/min/demo/ui/screenshots
+fi
+resize-image -i ./assets/demo/ui/screenshots/company-profile-ui-screenshot-1.png -o ./assets/min/demo/ui/screenshots/company-profile-ui-screenshot-1.min.png -h 400
+
 echo "minify image process completed"
