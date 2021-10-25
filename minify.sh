@@ -83,5 +83,7 @@ if [ ! -d "./assets/min/demo/ui/screenshots" ]; then
   mkdir assets/min/demo/ui/screenshots
 fi
 resize-image -i ./assets/demo/ui/screenshots/company-profile-ui-screenshot-1.png -o ./assets/min/demo/ui/screenshots/company-profile-ui-screenshot-1.min.png -h 400
+resize-image -i ./assets/demo/ui/screenshots/company-profile-ui-screenshot-2.png -o ./assets/min/demo/ui/screenshots/company-profile-ui-screenshot-2.min.png -h 400
+resize-image -i ./assets/demo/ui/screenshots/company-profile-ui-screenshot-3.png -o ./assets/min/demo/ui/screenshots/company-profile-ui-screenshot-3.min.png -h 400
 
 echo "minify image process completed"
