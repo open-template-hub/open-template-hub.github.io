@@ -17,6 +17,7 @@ resize-image -i ./assets/logo/brand-logo-merged.png -o ./assets/min/logo/brand-l
 resize-image -i ./assets/logo/brand-logo-pieces.png -o ./assets/min/logo/brand-logo-pieces.min.png -h 200
 resize-image -i ./assets/logo/brand-logo-replace.png -o ./assets/min/logo/brand-logo-replace.min.png -h 200
 resize-image -i ./assets/logo/brand-logo-shine.png -o ./assets/min/logo/brand-logo-shine.min.png -h 200
+resize-image -i ./assets/logo/product-logo-question.png -o ./assets/min/logo/product-logo-question.min.png -h 200
 
 resize-image -i ./assets/logo/oth-packages.png -o ./assets/min/logo/oth-packages.min.png -h 450
 
