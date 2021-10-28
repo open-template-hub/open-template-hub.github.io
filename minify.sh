@@ -92,5 +92,6 @@ if [ ! -d "./assets/min/demo/server" ]; then
   mkdir assets/min/demo/server
 fi
 resize-image -i ./assets/demo/server/orchestration-server-demo.png -o ./assets/min/demo/server/orchestration-server-demo.min.png -h 400
+resize-image -i ./assets/demo/server/business-logic-server-demo.png -o ./assets/min/demo/server/business-logic-server-demo.min.png -h 400
 
 echo "minify image process completed"
