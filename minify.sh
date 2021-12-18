@@ -30,6 +30,7 @@ resize-image -i ./assets/logo/server/auth-server-logo.png -o ./assets/min/logo/s
 resize-image -i ./assets/logo/server/business-logic-server-logo.png -o ./assets/min/logo/server/business-logic-server-logo.min.png -h 200
 resize-image -i ./assets/logo/server/file-storage-server-logo.png -o ./assets/min/logo/server/file-storage-server-logo.min.png -h 200
 resize-image -i ./assets/logo/server/mail-server-logo.png -o ./assets/min/logo/server/mail-server-logo.min.png -h 200
+resize-image -i ./assets/logo/server/sms-server-logo.png -o ./assets/min/logo/server/sms-server-logo.min.png -h 200
 resize-image -i ./assets/logo/server/payment-server-logo.png -o ./assets/min/logo/server/payment-server-logo.min.png -h 200
 resize-image -i ./assets/logo/server/orchestration-server-logo.png -o ./assets/min/logo/server/orchestration-server-logo.min.png -h 200
 
