@@ -33,7 +33,7 @@ resize-image -i ./assets/logo/server/mail-server-logo.png -o ./assets/min/logo/s
 resize-image -i ./assets/logo/server/sms-server-logo.png -o ./assets/min/logo/server/sms-server-logo.min.png -h 200
 resize-image -i ./assets/logo/server/payment-server-logo.png -o ./assets/min/logo/server/payment-server-logo.min.png -h 200
 resize-image -i ./assets/logo/server/orchestration-server-logo.png -o ./assets/min/logo/server/orchestration-server-logo.min.png -h 200
-resize-image -i ./assets/logo/server/cloud-integration-server-logo.png -o ./assets/min/logo/server/cloud-integration-logo.min.png -h 200
+resize-image -i ./assets/logo/server/cloud-integration-server-logo.png -o ./assets/min/logo/server/cloud-integration-server-logo.min.png -h 200
 
 echo "ui"
 if [ ! -d "./assets/min/logo/ui" ]; then
