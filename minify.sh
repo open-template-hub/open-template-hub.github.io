@@ -42,6 +42,7 @@ fi
 resize-image -i ./assets/logo/ui/mobile-ui-logo.png -o ./assets/min/logo/ui/mobile-ui-logo.min.png -h 200
 resize-image -i ./assets/logo/ui/web-ui-logo.png -o ./assets/min/logo/ui/web-ui-logo.min.png -h 200
 resize-image -i ./assets/logo/ui/admin-ui-logo.png -o ./assets/min/logo/ui/admin-ui-logo.min.png -h 200
+resize-image -i ./assets/logo/ui/saas-ui-logo.png -o ./assets/min/logo/ui/saas-ui-logo.min.png -h 200
 
 echo "generator"
 if [ ! -d "./assets/min/logo/generator" ]; then
