@@ -79,6 +79,8 @@ resize-image -i ./assets/demo/ui/company-profile-ui-demo-light.png -o ./assets/m
 resize-image -i ./assets/demo/ui/company-profile-ui-demo-dark.png -o ./assets/min/demo/ui/company-profile-ui-demo-dark.min.png -h 400
 resize-image -i ./assets/demo/ui/web-ui-demo-light.png -o ./assets/min/demo/ui/web-ui-demo-light.min.png -h 400
 resize-image -i ./assets/demo/ui/web-ui-demo-dark.png -o ./assets/min/demo/ui/web-ui-demo-dark.min.png -h 400
+resize-image -i ./assets/demo/ui/admin-ui-demo-light.png -o ./assets/min/demo/ui/admin-ui-demo-light.min.png -h 400
+resize-image -i ./assets/demo/ui/admin-ui-demo-dark.png -o ./assets/min/demo/ui/admin-ui-demo-dark.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-ios-demo-light.png -o ./assets/min/demo/ui/mobile-ui-ios-demo-light.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-ios-demo-dark.png -o ./assets/min/demo/ui/mobile-ui-ios-demo-dark.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-android-demo-light.png -o ./assets/min/demo/ui/mobile-ui-android-demo-light.min.png -h 400
@@ -93,6 +95,10 @@ resize-image -i ./assets/demo/ui/screenshots/company-profile-ui-screenshot-3.png
 resize-image -i ./assets/demo/ui/screenshots/web-ui-screenshot-1.png -o ./assets/min/demo/ui/screenshots/web-ui-screenshot-1.min.png -h 400
 resize-image -i ./assets/demo/ui/screenshots/web-ui-screenshot-2.png -o ./assets/min/demo/ui/screenshots/web-ui-screenshot-2.min.png -h 400
 resize-image -i ./assets/demo/ui/screenshots/web-ui-screenshot-3.png -o ./assets/min/demo/ui/screenshots/web-ui-screenshot-3.min.png -h 400
+resize-image -i ./assets/demo/ui/screenshots/admin-ui-screenshot-1.png -o ./assets/min/demo/ui/screenshots/admin-ui-screenshot-1.min.png -h 400
+resize-image -i ./assets/demo/ui/screenshots/admin-ui-screenshot-2.png -o ./assets/min/demo/ui/screenshots/admin-ui-screenshot-2.min.png -h 400
+resize-image -i ./assets/demo/ui/screenshots/admin-ui-screenshot-3.png -o ./assets/min/demo/ui/screenshots/admin-ui-screenshot-3.min.png -h 400
+
 
 if [ ! -d "./assets/min/demo/server" ]; then
   mkdir assets/min/demo/server
