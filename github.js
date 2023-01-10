@@ -1,1 +1,1 @@
-console.log("opentemplatehub.com");
+console.log( "opentemplatehub.com" );
