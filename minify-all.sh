@@ -92,6 +92,8 @@ resize-image -i ./assets/demo/ui/mobile-ui-ios-demo-light.png -o ./assets/min/de
 resize-image -i ./assets/demo/ui/mobile-ui-ios-demo-dark.png -o ./assets/min/demo/ui/mobile-ui-ios-demo-dark.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-android-demo-light.png -o ./assets/min/demo/ui/mobile-ui-android-demo-light.min.png -h 400
 resize-image -i ./assets/demo/ui/mobile-ui-demo-both.png -o ./assets/min/demo/ui/mobile-ui-demo-both.min.png -h 400
+resize-image -i ./assets/demo/ui/saas-ui-demo-light.png -o ./assets/min/demo/ui/saas-ui-demo-light.min.png -h 400
+resize-image -i ./assets/demo/ui/saas-ui-demo-dark.png -o ./assets/min/demo/ui/saas-ui-demo-dark.min.png -h 400
 
 if [ ! -d "./assets/min/demo/ui/screenshots" ]; then
   mkdir assets/min/demo/ui/screenshots
