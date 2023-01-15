@@ -73,6 +73,7 @@ resize-image -i ./assets/wallpaper/logo-text-v-light.png -o ./assets/min/wallpap
 resize-image -i ./assets/wallpaper/oth-packages-color.png -o ./assets/min/wallpaper/oth-packages-color.min.png -h 400
 resize-image -i ./assets/wallpaper/oth-packages-dark.png -o ./assets/min/wallpaper/oth-packages-dark.min.png -h 400
 resize-image -i ./assets/wallpaper/oth-packages-light.png -o ./assets/min/wallpaper/oth-packages-light.min.png -h 400
+resize-image -i ./assets/wallpaper/oth-packages-2-color.png -o ./assets/min/wallpaper/oth-packages-2-color.min.png -h 400
 
 echo "demo"
 if [ ! -d "./assets/min/demo" ]; then
